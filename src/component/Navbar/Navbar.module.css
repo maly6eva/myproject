@@ -1,0 +1,17 @@
+.nav{
+    grid-area: n;
+    background-color: #eed55c;
+    font-size: 1.9rem;
+    font-family: cursive, sans-serif;
+    font-weight: bolder;
+    padding: 20px 50px;
+    gap: 1em;
+}
+.item {
+    color: #7365cb;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    color: #9d0a0a;
+}
