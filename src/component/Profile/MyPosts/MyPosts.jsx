@@ -3,16 +3,18 @@ import s from './MyPosts.module.css'
 import Post from "./Post/Post"
 
 const MyPosts = (props) => {
-
-
     let pestElement =
         props.posts.map(p =>  <Post message={p.message} name={p.name} likecount={p.likecount}/>)
 
     let newPostElement = React.createRef()
 
     let addPost = () => {
-       let text = newPostElement.current.value;
-       props.addPost(text)
+        props.addPost()
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
     }
 
 
@@ -21,7 +23,7 @@ const MyPosts = (props) => {
            <h3>My post</h3>
             <div>
                 <div>
-                    <textarea ref={newPostElement} name="" id="" cols="30" rows="10"></textarea>
+                    <textarea onChange={onPostChange} ref={newPostElement} name="" id="" cols="30" rows="10" value={props.newPostText}/>
                 </div>
                 <div>
                     <button onClick={ addPost }>Add post</button>
@@ -31,5 +33,6 @@ const MyPosts = (props) => {
                 {pestElement}
         </div>
     </div>
+
 }
 export default MyPosts;
