@@ -1,5 +1,10 @@
-import Post from "../component/Profile/MyPosts/Post/Post";
-import { rerenderEntireTree } from "../render";
+import {logDOM} from "@testing-library/react";
+
+let rerenderEntireTree = () => {
+    console.log('GiFi')
+}
+
+
 
 let state = {
     profilePage: {
@@ -10,7 +15,6 @@ let state = {
             {id: 2, message: 'What are you?', name: 'Katya', likecount: '200'}
         ],
         newPostText: 'Dimka'
-
     },
     dialogsPage: {
         messagesData: [
@@ -46,4 +50,9 @@ export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state)
 }
+export const subscribe = (observer) => {
+    rerenderEntireTree= observer
+
+}
+
 export default state;
