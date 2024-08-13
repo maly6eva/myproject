@@ -1,4 +1,7 @@
-import {logDOM} from "@testing-library/react";
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+
 let store = {
     _state: {
         profilePage: {
@@ -55,8 +58,16 @@ let store = {
         }
 
     }
-
 }
+
+
+
+export const addPostActionCreator = () => ({type: "ADD-POST"})
+
+export const updateNewPostActionCreator = (text) =>
+    ({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
+
+
 
 
 export default store;
