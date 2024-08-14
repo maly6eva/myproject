@@ -3,7 +3,7 @@ import s from './Dialogs.module.css'
 
 import DialogsItem from './../Dialogs/DialogsItem/DialogsItem';
 import Messages from './../Dialogs/Messages/Messages';
-import {sendMessageBodyCreator, updateNewMessageBodyCreator} from "../../redax/state";
+import {sendMessageBodyCreator, updateNewMessageBodyCreator} from "../../redax/dialogs_reducer";
 
 
 const Dialogs = (props) => {
@@ -34,7 +34,7 @@ const Dialogs = (props) => {
                 <div>{messagesElements}</div>
             </div>
             <div>
-            <div><textarea value={newMessageBody} onChange={onNewMessageChange} placeholder='eee kseniadimkavalerka' name="" id="" cols="30" rows="10"></textarea></div>
+            <div><textarea value={newMessageBody} onChange={onNewMessageChange} placeholder='eee kseniadimkavalerka'></textarea></div>
                 <div><button onClick={onSendMessageClick } className={s.button}>Спросить!</button></div>
             </div>
         </div>
