@@ -9,7 +9,8 @@ import Music from "./component/Profile/Music/Music";
 import Settings from "./component/Profile/Settings/Settings";
 import { BrowserRouter, Routes, Route, NavLink, Link } from "react-router-dom";
 import Messages from "./component/Dialogs/Messages/Messages";
-import store from "./redax/state";
+import store from "./redux/store";
+import DialogsContainer from "./component/Dialogs/DialogsContainer";
 
 const App = (props) => {
 
@@ -21,10 +22,8 @@ const App = (props) => {
       <div className="app-wrapper-content">
         <Routes>
 
-          <Route path="/profile/*" element={<Profile profilePage={props.state.profilePage}
-                                                     dispatch={props.dispatch}
-                                                     />} />
-          <Route path="/dialogs/*" element={<Dialogs store={props.store}/>}/>
+          <Route path="/profile/*" element={<Profile store={props.store}/>} />
+          <Route path="/dialogs/*" element={<DialogsContainer store={props.store}/>}/>
           <Route path="/news/*" element={<News />} />
           <Route path="/music/*" element={<Music />} />
           <Route path="/settings/*" element={<Settings />} />
