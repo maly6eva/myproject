@@ -34,7 +34,6 @@ const dialogsReducer = (state = initialState, action) => {
                 newMessageBody: '',
                 messages: [...state.messages, {id: 4, name: body}]
             };
-            return stateCopy;
         default:
             return state;
     }
