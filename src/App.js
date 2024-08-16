@@ -11,6 +11,8 @@ import { BrowserRouter, Routes, Route, NavLink, Link } from "react-router-dom";
 import Messages from "./component/Dialogs/Messages/Messages";
 import store from "./redux/store";
 import DialogsContainer from "./component/Dialogs/DialogsContainer";
+import Users from "./component/Users/Users";
+import UsersContainer from "./component/Users/UsersContainer";
 
 const App = (props) => {
 
@@ -24,6 +26,7 @@ const App = (props) => {
 
           <Route path="/profile/*" render ={ () => <Profile />} />
           <Route path="/dialogs/*" render ={ () => <DialogsContainer />}/>
+            <Route path="/users/*" render ={ () => <UsersContainer/>}/>
           <Route path="/news/*" element={<News />} />
           <Route path="/music/*" element={<Music />} />
           <Route path="/settings/*" element={<Settings />} />
