@@ -9,7 +9,6 @@ import Messages from './../Dialogs/Messages/Messages';
 const Dialogs = (props) => {
 
     let state = props.dialogsPage
-
     let dialogsElements = state.dialogs.map(d => <DialogsItem name={d.name} key={d.id} id={d.id}/>)
     let messagesElements = state.messagesData.map(m => <Messages messages={m.message} key={m.id}/>)
     let newMessageBody = state.newMessageBody;
